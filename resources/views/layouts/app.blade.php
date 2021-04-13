@@ -8,6 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="ws_url" content="{{ env('WS_URL') }}">
+    <meta name="ws_asset" content="{{ env('WS_ASSET') }}">
     <meta name="user_id" content="{{ Auth::id() }}">
 
     <title>Realtime Private Chat</title>

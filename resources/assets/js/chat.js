@@ -1,4 +1,5 @@
 const WS_URL = $('meta[name=ws_url]').attr("content");
+const WS_ASSET = $('meta[name=WS_ASSET]').attr("content");
 const USER_ID = Number($('meta[name=user_id]').attr("content"));
 var socket = io(WS_URL, { query: "id= "+USER_ID });
 var app = new Vue({
@@ -258,8 +259,8 @@ var chatbox = {
                             </div>
 
                             <div v-if="messagePacket.type == 'file'" v-bind:class="{ 'pull-right' : (messagePacket.fromUserId == user_id), 'pull-left' : (messagePacket.fromUserId != user_id) }" class="direct-chat-text clearfix" style="margin-right: 1px;margin-left: 1px;word-break: break-all;padding: 3px 3px;">
-                                <a v-if="messagePacket.fileFormat == 'image'" :href="'`+WS_URL+`' + messagePacket.filePath" download :title="messagePacket.message" target="_new"><img height="110px;" width="110px;" :src="'`+WS_URL+`' + messagePacket.filePath"></a>
-                                <a v-else :href="'`+WS_URL+`' + messagePacket.filePath" download :title="messagePacket.message" target="_new"><span class="info-box-icon" style="color: white;background:none;"><i class="fa fa-paperclip"></i></span>
+                                <a v-if="messagePacket.fileFormat == 'image'" :href="'`+WS_ASSET+`' + messagePacket.filePath" download :title="messagePacket.message" target="_new"><img height="110px;" width="110px;" :src="'`+WS_ASSET+`' + messagePacket.filePath"></a>
+                                <a v-else :href="'`+WS_ASSET+`' + messagePacket.filePath" download :title="messagePacket.message" target="_new"><span class="info-box-icon" style="color: white;background:none;"><i class="fa fa-paperclip"></i></span>
                                 </a>
                             </div>
                         </div>
