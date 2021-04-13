@@ -1,5 +1,5 @@
 const WS_URL = $('meta[name=ws_url]').attr("content");
-const WS_ASSET = $('meta[name=WS_ASSET]').attr("content");
+const WS_ASSET = $('meta[name=ws_asset]').attr("content");
 const USER_ID = Number($('meta[name=user_id]').attr("content"));
 var socket = io(WS_URL, { query: "id= "+USER_ID });
 var app = new Vue({
